@@ -16,32 +16,33 @@ import {
 import { AxeIcon } from "lucide-react";
 import Image from "next/image";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Novosti",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Dogadjanja",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Galerija",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Sve Vijesti",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-];
+const vijestiSubItems: { title: string; href: string; description: string }[] =
+  [
+    {
+      title: "Novosti",
+      href: "/vijesti?category=novosti",
+      description:
+        "A modal dialog that interrupts the user with important content and expects a response.",
+    },
+    {
+      title: "Dogadjanja",
+      href: "/vijesti?category=dogadjanja",
+      description:
+        "For sighted users to preview content available behind a link.",
+    },
+    {
+      title: "Galerija",
+      href: "/vijesti?category='galerija'",
+      description:
+        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    },
+    {
+      title: "Sve Vijesti",
+      href: "/vijesti",
+      description:
+        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    },
+  ];
 
 export function DesktopNavigation() {
   return (
@@ -83,7 +84,7 @@ export function DesktopNavigation() {
           <NavigationMenuTrigger>Vijesti</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {vijestiSubItems.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}

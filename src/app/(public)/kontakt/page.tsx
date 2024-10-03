@@ -29,7 +29,7 @@ const KontaktPage = () => {
               {/* Right side - Contact Information */}
               <div className="md:w-1/2 p-8 bg-gray-50">
                 <h2 className="text-2xl font-semibold mb-6 text-gray-900">
-                  Contact Us
+                  Kontaktirajte Nas
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-center">
@@ -69,12 +69,8 @@ const KontaktPage = () => {
         </div>
       </section>
 
-      {/* Additional Content Section */}
       <section className="py-12 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900">
-            Kontaktirajte nas
-          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">
