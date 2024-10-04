@@ -26,7 +26,7 @@ const vijestiSubItems: { title: string; href: string; description: string }[] =
     },
     {
       title: "Dogadjanja",
-      href: "/vijesti?category=dogadjanja",
+      href: "/vijesti?category=događanja",
       description:
         "For sighted users to preview content available behind a link.",
     },

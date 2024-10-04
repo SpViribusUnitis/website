@@ -1,4 +1,5 @@
 import { SocialIconsList } from "@/components/shared/social-icons-list";
+import { CONTACT_DATA } from "@/static";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -34,32 +35,32 @@ const KontaktPage = () => {
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Phone className="w-5 h-5 mr-2 text-primary" />
-                    <span className="text-gray-700">+1 (123) 456-7890</span>
+                    <span className="text-gray-700">{CONTACT_DATA.phone}</span>
                   </div>
                   <div className="flex items-center">
                     <Mail className="w-5 h-5 mr-2 text-primary" />
                     <a
-                      href="mailto:contact@organization.com"
+                      href={`mailto:${CONTACT_DATA.mail}`}
                       className="text-gray-700 hover:underline"
                     >
-                      contact@organization.com
+                      {CONTACT_DATA.mail}
                     </a>
                   </div>
                   <div className="flex items-start">
                     <MapPin className="w-5 h-5 mr-2 mt-1 text-primary" />
                     <span className="text-gray-700">
-                      123 Organization Street,
+                      Poljana Zdenke Mikin 45
                       <br />
-                      City, State 12345,
+                      Zagreb
                       <br />
-                      Country
+                      Hrvatska
                     </span>
                   </div>
                 </div>
 
                 <div className="mt-8">
                   <h3 className="text-lg font-semibold mb-4 text-gray-900">
-                    Follow Us
+                    Pratite Nas
                   </h3>
                   <SocialIconsList />
                 </div>

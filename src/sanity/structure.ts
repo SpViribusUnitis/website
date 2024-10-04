@@ -6,10 +6,12 @@ export const structure: StructureResolver = (S) =>
     .title('Blog')
     .items([
       S.documentTypeListItem('vijest').title('Kreiraj Vijest'),
+      S.documentTypeListItem('sponzor').title('Dodaj Sponzora'),
       S.divider(),
       S.documentTypeListItem('category').title('Kategorija Vijesti'),
       S.documentTypeListItem('author').title('Autori'),
       ...S.documentTypeListItems().filter(
-        (item) => item.getId() && !['category', 'author', 'vijest'].includes(item.getId()!),
+        (item) =>
+          item.getId() && !['category', 'author', 'vijest', 'sponzor'].includes(item.getId()!),
       ),
     ])

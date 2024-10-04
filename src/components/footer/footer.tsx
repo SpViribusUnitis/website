@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { SocialIconsList } from "../shared/social-icons-list";
+import { CONTACT_DATA } from "@/static";
 
 export const Footer = () => {
   return (
@@ -16,15 +17,15 @@ export const Footer = () => {
           <nav className="flex flex-col gap-4 sm:flex-row sm:gap-6">
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span className="text-sm">info@acme.com</span>
+              <span className="text-sm">{CONTACT_DATA.mail}</span>
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span className="text-sm">+1 (555) 123-4567</span>
+              <span className="text-sm">{CONTACT_DATA.phone}</span>
             </div>
             <div className="flex items-center space-x-2">
               <Globe className="h-4 w-4" />
-              <span className="text-sm">www.acme.com</span>
+              <span className="text-sm">www.bzvu.hr</span>
             </div>
           </nav>
         </div>

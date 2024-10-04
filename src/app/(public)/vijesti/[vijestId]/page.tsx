@@ -8,6 +8,9 @@ import { buildVijestQuery, vijestiPathsQuery } from "@/sanity/queries/vijesti";
 
 import { formatISO, parseISO, format } from "date-fns";
 import imageUrlBuilder from "@sanity/image-url";
+import { formatDate } from "@/lib/utils";
+import { CustomPortableTextComponents } from "@/components/sanity/CustomPortableTextComponents/CustomPortableTextComponents";
+import { PortableText } from "@portabletext/react";
 const builder = imageUrlBuilder(client);
 // Simulacija dohvaćanja podataka iz baze
 async function getBlogPost(slug: string) {
@@ -87,8 +90,7 @@ export default async function BlogPost({
   if (!vijestData) {
     notFound();
   }
-  const { title, mainImage, author, publishedAt } = vijestData;
-  const formatedDate = format(parseISO(publishedAt), "dd MM, yyyy");
+  const { title, mainImage, author, publishedAt, body } = vijestData;
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row gap-8">
@@ -103,8 +105,13 @@ export default async function BlogPost({
             />
             <div className="p-6">
               <h1 className="text-3xl font-bold mb-2">{title}</h1>
-              <p className="text-gray-600 mb-4">{post.date}</p>
-              {/*  <BlogPostContent content={post.content} /> */}
+              <p className="text-gray-600 mb-4">{formatDate(publishedAt)}</p>
+              <div>
+                <PortableText
+                  value={body}
+                  components={CustomPortableTextComponents}
+                />
+              </div>
             </div>
           </article>
         </main>
