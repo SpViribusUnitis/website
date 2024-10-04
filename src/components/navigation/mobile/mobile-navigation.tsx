@@ -119,8 +119,8 @@ export const MobileNavSidebar = () => {
                   { path: "/vijesti", title: "sve vijesti" },
                   { path: '/vijesti?category="novosti"', title: "novosti" },
                   {
-                    path: '/vijesti?category="dogadjanja"',
-                    title: "dogadjanja",
+                    path: '/vijesti?category="događanja"',
+                    title: "događanja",
                   },
                 ]}
               />

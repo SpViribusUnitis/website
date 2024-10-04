@@ -1,7 +1,9 @@
 import React from "react";
 import { SponsorCard } from "../cards/sponsor-card";
+import { useGetSponzors } from "@/api/use-get-sponsors";
 
-export const SponsorSection = () => {
+export const SponsorSection = async () => {
+  const sponzori = await useGetSponzors();
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6 mx-auto">
@@ -9,8 +11,8 @@ export const SponsorSection = () => {
           Prijatelji Zadruge
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-center">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <SponsorCard img="" alt="" key={i} />
+          {sponzori?.map((sponzor) => (
+            <SponsorCard sponzor={sponzor} key={sponzor._id} />
           ))}
         </div>
       </div>

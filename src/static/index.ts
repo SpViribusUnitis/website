@@ -15,3 +15,8 @@ export const HERO_SECTION_IMAGES = [
     _id: "a3231",
   },
 ];
+
+export const CONTACT_DATA = {
+  mail: "spviribusunitis@gmail.com",
+  phone: "+385 01 666 7784",
+};

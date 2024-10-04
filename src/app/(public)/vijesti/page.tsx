@@ -9,55 +9,24 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useGetPosts } from "@/api/use-get-posts";
+import { useGetPostsPreview } from "@/api/use-get-posts-preview";
+import { formatDate } from "@/lib/utils";
+import { NewsCard } from "@/components/cards/news-card";
 
-// Simulated news data
-const newsData = [
-  {
-    id: 1,
-    title: "New Park Opening",
-    category: "dogadjanja",
-    date: "2024-03-15",
-    description: "A new park is opening in the city center.",
-  },
-  {
-    id: 2,
-    title: "Local Elections Announced",
-    category: "novosti",
-    date: "2024-03-20",
-    description: "Local elections have been scheduled for next month.",
-  },
-  {
-    id: 3,
-    title: "Community Cleanup Event",
-    category: "dogadjanja",
-    date: "2024-03-25",
-    description: "Join us for a community cleanup event this weekend.",
-  },
-  {
-    id: 4,
-    title: "New Public Transportation Routes",
-    category: "novosti",
-    date: "2024-03-30",
-    description: "New bus routes will be implemented starting next week.",
-  },
-];
-
-export default function NewsPage({
+export default async function NewsPage({
   searchParams,
 }: {
-  searchParams: { category?: string };
+  searchParams: { category?: "događanja" | "novosti" };
 }) {
   const { category } = searchParams;
-
-  // Filter news based on category
-  const filteredNews = category
-    ? newsData.filter((news) => news.category === category)
-    : newsData;
-
   // If an invalid category is provided, return 404
-  if (category && !["dogadjanja", "novosti"].includes(category)) {
+  if (category && !["događanja", "novosti"].includes(category)) {
     notFound();
   }
+  const vijestiData = await useGetPostsPreview(category);
+  console.log(vijestiData);
+
   const naslov = category ? category : "Sve Vijesti";
   return (
     <div className="container mx-auto px-4 py-8 min-h-[70vh]">
@@ -69,9 +38,9 @@ export default function NewsPage({
         </Button>
         <Button
           asChild
-          variant={category === "dogadjanja" ? "default" : "outline"}
+          variant={category === "događanja" ? "default" : "outline"}
         >
-          <Link href="/vijesti?category=dogadjanja">Događanja</Link>
+          <Link href="/vijesti?category=događanja">Događanja</Link>
         </Button>
         <Button
           asChild
@@ -82,25 +51,14 @@ export default function NewsPage({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredNews.map((news) => (
-          <Card key={news.id}>
-            <CardHeader>
-              <CardTitle>{news.title}</CardTitle>
-              <CardDescription>{news.date}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>{news.description}</p>
-            </CardContent>
-            <CardFooter>
-              <Button variant="outline">Read More</Button>
-            </CardFooter>
-          </Card>
+        {vijestiData.map((vijest) => (
+          <NewsCard previewPost={vijest} key={vijest._id} />
         ))}
       </div>
 
-      {filteredNews.length === 0 && (
+      {vijestiData.length === 0 && (
         <p className="text-center text-gray-500 mt-8">
-          No news articles found for this category.
+          Vijesti nisu pronađene za ovu kategoriju.
         </p>
       )}
     </div>

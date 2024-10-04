@@ -3,32 +3,35 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { IPostPreview } from "@/api/use-get-posts-preview";
+import { formatDate } from "@/lib/utils";
+import { Button } from "../ui/button";
 
-export const NewsCard = () => {
+interface INewsCardProps {
+  previewPost: IPostPreview;
+}
+
+export const NewsCard = ({ previewPost }: INewsCardProps) => {
   return (
-    <Card>
+    <Card className="flex flex-col justify-between">
       <CardHeader>
-        <CardTitle>Exciting Development in Tech</CardTitle>
-        <CardDescription>2 days ago</CardDescription>
+        <CardTitle>{previewPost.title}</CardTitle>
+        <CardDescription>{formatDate(previewPost._createdAt)}</CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <Link
-          className="inline-flex items-center text-sm font-medium text-blue-600 hover:underline mt-4"
-          href="#"
-        >
-          Read More
-          <ArrowRight className="ml-1 h-4 w-4" />
-        </Link>
+        <p>{previewPost.previewText}</p>
       </CardContent>
+      <CardFooter className="flex-1 mb-auto h-full flex-col items-start justify-end">
+        <Button variant="outline" asChild>
+          <Link href={`/vijesti/${previewPost.slug}`}>Pročitaj više</Link>
+        </Button>
+      </CardFooter>
     </Card>
   );
 };
