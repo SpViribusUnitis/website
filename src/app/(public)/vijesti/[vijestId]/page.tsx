@@ -69,7 +69,7 @@ export async function generateStaticParams() {
       revalidate: 120,
     },
   });
-
+  console.log(posts, "POSTS GENERACIJA");
   return posts;
 }
 export default async function BlogPost({

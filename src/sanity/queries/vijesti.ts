@@ -11,5 +11,5 @@ export const buildVijestQuery = (
     body
   }`
 export const vijestiPathsQuery = groq`*[_type == "vijest" && defined(slug.current)][]{
-    "params": { "slug": slug.current }
+    "params": { "vijestId": slug.current }
   }`
