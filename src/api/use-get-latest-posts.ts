@@ -16,7 +16,7 @@ export const useGetLatestPosts = async (
 ) => {
   const groqQuery = `*[_type == 'vijest' ${category ? `&& count((categories[]->slug.current)[@ in ["${category}"]]) > 0 ` : ""}]{
     title,'slug':slug.current,_createdAt,_id,previewText
-  } | order(_createdAt desc)[0..${count}]`;
+  } | order(_createdAt desc)[0..${count - 1}]`;
 
   const data = await client.fetch(groqQuery, [], {
     next: {
