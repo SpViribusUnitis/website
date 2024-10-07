@@ -18,5 +18,6 @@ export const HERO_SECTION_IMAGES = [
 
 export const CONTACT_DATA = {
   mail: "spviribusunitis@gmail.com",
-  phone: "+385 01 666 7784",
+  phone: "+385 95 610 0000",
+  facebook: "https://www.facebook.com/profile.php?id=61566331962212",
 };

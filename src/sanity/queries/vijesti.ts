@@ -8,6 +8,8 @@ export const buildVijestQuery = (
     author,
     mainImage,
     publishedAt,
+    previewText,
+    _createdAt,
     body
   }`
 export const vijestiPathsQuery = groq`*[_type == "vijest" && defined(slug.current)][]{

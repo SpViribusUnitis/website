@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { HERO_SECTION_IMAGES } from "@/static";
+import Link from "next/link";
 
 export const HeroSection = () => {
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);
@@ -28,9 +29,11 @@ export const HeroSection = () => {
               gradeći bolju budućnost za zajednicu i nove generacije.
             </p>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button size="lg">O Nama</Button>
-              <Button size="lg" variant="outline">
-                Kontakt
+              <Button size="lg" asChild>
+                <Link href="/o-nama">O Nama</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/kontakt">Kontakt</Link>
               </Button>
             </div>
           </div>

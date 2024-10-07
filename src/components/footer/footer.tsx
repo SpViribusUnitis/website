@@ -17,7 +17,9 @@ export const Footer = () => {
           <nav className="flex flex-col gap-4 sm:flex-row sm:gap-6">
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span className="text-sm">{CONTACT_DATA.mail}</span>
+              <a href={`mailto:${CONTACT_DATA.mail}`} className="text-sm">
+                {CONTACT_DATA.mail}
+              </a>
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />

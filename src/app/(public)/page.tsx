@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const HomePage = async () => {
   const data = await useGetPosts("dogadjanja");
-  console.log(data);
+
   return (
     <main>
       <HeroSection />
