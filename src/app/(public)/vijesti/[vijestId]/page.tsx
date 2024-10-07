@@ -40,7 +40,11 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.previewText.substring(0, 160),
-      images: [{ url: buildImage }],
+      url: `/vijesti/${post.slug.current}`,
+      siteName: "Braniteljska Zadruga Viribus Unitis",
+      images: [{ url: buildImage, width: 400, height: 400 }],
+      type: "website",
+      locale: "en-US",
     },
   };
 }
