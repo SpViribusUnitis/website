@@ -69,8 +69,11 @@ export async function generateStaticParams() {
       revalidate: 120,
     },
   });
-  console.log(posts, "POSTS GENERACIJA");
-  return posts;
+  const mappedPosts = posts.map((item: { params: { vijestId: string } }) => ({
+    vijestId: item.params.vijestId,
+  }));
+  console.log(posts, "POSTS GENERACIJA", mappedPosts);
+  return mappedPosts;
 }
 export default async function BlogPost({
   params,
