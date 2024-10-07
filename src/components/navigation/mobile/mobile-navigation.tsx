@@ -24,6 +24,8 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import Image from "next/image";
+import { CONTACT_DATA } from "@/static";
+import { SocialIconsList } from "@/components/shared/social-icons-list";
 
 const NavItem = ({
   title,
@@ -117,34 +119,23 @@ export const MobileNavSidebar = () => {
                 title="Vijesti"
                 subItems={[
                   { path: "/vijesti", title: "sve vijesti" },
-                  { path: '/vijesti?category="novosti"', title: "novosti" },
+                  { path: "/vijesti?category=novosti", title: "novosti" },
                   {
-                    path: '/vijesti?category="događanja"',
+                    path: "/vijesti?category=događanja",
                     title: "događanja",
                   },
                 ]}
               />
+              <NavItem
+                title="Pokrovitelji"
+                path="/pokrovitelji"
+                sheetClose={setIsOpen}
+              />
               <NavItem title="Kontakt" path="/kontakt" sheetClose={setIsOpen} />
             </nav>
-            <div className="flex justify-center space-x-4 py-6">
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-primary"
-              >
-                <Facebook className="h-6 w-6" />
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-primary"
-              >
-                <Twitter className="h-6 w-6" />
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-primary"
-              >
-                <Instagram className="h-6 w-6" />
-              </Link>
+            <div className="flex flex-col gap-1 justify-center space-x-4 py-6">
+              <p className="uppercase">Pratite nas: </p>
+              <SocialIconsList />
             </div>
           </div>
         </SheetContent>

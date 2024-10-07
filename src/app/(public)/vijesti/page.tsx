@@ -25,7 +25,6 @@ export default async function NewsPage({
     notFound();
   }
   const vijestiData = await useGetPostsPreview(category);
-  console.log(vijestiData);
 
   const naslov = category ? category : "Sve Vijesti";
   return (

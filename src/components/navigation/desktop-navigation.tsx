@@ -30,12 +30,7 @@ const vijestiSubItems: { title: string; href: string; description: string }[] =
       description:
         "For sighted users to preview content available behind a link.",
     },
-    {
-      title: "Galerija",
-      href: "/vijesti?category='galerija'",
-      description:
-        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-    },
+
     {
       title: "Sve Vijesti",
       href: "/vijesti",
@@ -95,6 +90,13 @@ export function DesktopNavigation() {
               ))}
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/pokrovitelji" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Pokrovitelji
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/kontakt" legacyBehavior passHref>

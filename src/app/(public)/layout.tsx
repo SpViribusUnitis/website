@@ -8,7 +8,7 @@ const WebsiteLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div>
+    <div className="max-md:px-1">
       {" "}
       <Navigation />
       {children}

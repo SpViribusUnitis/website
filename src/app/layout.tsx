@@ -15,8 +15,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Zadruga Lorem Ipsum",
-  description: "Zadruga za promicanje branitelja",
+  title: "Braniteljska Zadruga Viribus Unitis",
+  description:
+    "Braniteljsku zadrugu Viribus Unitis osnovali su veterani Domovinskog rata pokrenuvši izradu radno-duhovnog kampa Anatot",
 };
 
 export default function RootLayout({

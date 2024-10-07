@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export const Navigation = () => {
   const headersList = headers();
-  console.log(headersList.get("x-invoke-path"), "LISTA");
+
   return (
     <nav className="h-[120px] flex justify-between py-4 items-center container mx-auto">
       <div className="flex-1">

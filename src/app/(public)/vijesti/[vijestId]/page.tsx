@@ -23,45 +23,27 @@ async function getBlogPost(slug: string) {
   };
 }
 
-async function getLatestNews() {
-  // Simulacija dohvaćanja najnovijih vijesti
-  return [
-    { id: 1, title: "Najnovija vijest 1", link: "/news/1" },
-    { id: 2, title: "Najnovija vijest 2", link: "/news/2" },
-    // ... dodajte još vijesti
-  ];
-}
-
-async function getLatestEvents() {
-  // Simulacija dohvaćanja najnovijih događanja
-  return [
-    { id: 1, title: "Najnoviji događaj 1", link: "/events/1" },
-    { id: 2, title: "Najnoviji događaj 2", link: "/events/2" },
-    // ... dodajte još događanja
-  ];
-}
-
-/* export async function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { vijestId: string };
 }): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+  const post = await client.fetch(buildVijestQuery(params.vijestId));
 
   if (!post) {
     return {};
   }
-
+  const buildImage = builder.image(post.mainImage).width(400).height(400).url();
   return {
     title: post.title,
-    description: post.content.substring(0, 160),
+    description: post.previewText.substring(0, 160),
     openGraph: {
       title: post.title,
-      description: post.content.substring(0, 160),
-      images: [{ url: post.image }],
+      description: post.previewText.substring(0, 160),
+      images: [{ url: buildImage }],
     },
   };
-} */
+}
 export async function generateStaticParams() {
   // Important, use the plain Sanity Client here
   const posts = await client.fetch(vijestiPathsQuery, [], {
@@ -72,7 +54,7 @@ export async function generateStaticParams() {
   const mappedPosts = posts.map((item: { params: { vijestId: string } }) => ({
     vijestId: item.params.vijestId,
   }));
-  console.log(posts, "POSTS GENERACIJA", mappedPosts);
+
   return mappedPosts;
 }
 export default async function BlogPost({
@@ -81,15 +63,9 @@ export default async function BlogPost({
   params: { vijestId: string };
 }) {
   /*  const post = await getBlogPost(params.slug); */
-  const post = {
-    image: "/images/hero-section/2.jpg",
-    title: "Test Tile",
-    date: "2022-05-22",
-  };
+
   const vijestData = await client.fetch(buildVijestQuery(params.vijestId));
-  const latestNews = await getLatestNews();
-  const latestEvents = await getLatestEvents();
-  console.log(vijestData);
+
   if (!vijestData) {
     notFound();
   }
