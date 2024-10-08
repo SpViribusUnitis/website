@@ -67,10 +67,10 @@ export function DesktopNavigation() {
                 Saznajte više o nama
               </ListItem>
               <ListItem href="/o-nama#ciljevi" title="Ciljevi">
-                Ciljevi i vizija zadruge --coupon sonny2022
+                Ciljevi i vizija zadruge
               </ListItem>
-              <ListItem href="/sponzori" title="Sponzori">
-                Dragi ljudi i poduzeća koja omogućuju ovo šta radimo
+              <ListItem href="/o-nama#pravilnik" title="Pravila Zadruge">
+                Detaljniji uvid u pravila naše zadruge
               </ListItem>
             </ul>
           </NavigationMenuContent>
