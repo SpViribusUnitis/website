@@ -11,21 +11,21 @@ interface ISponsorCardProps {
 export const SponsorCard = ({ sponzor }: ISponsorCardProps) => {
   const { logo, name, url } = sponzor;
   return (
-    <div className="flex flex-col items-center justify-center gap-3">
+    <div className="flex flex-col items-center justify-center gap-3 group py-2">
       <a
         href={url ? url : "#"}
         target="_blank"
         className={cn(
-          "space-y-2 cursor-default",
-          url && "cursor-pointer hover:text-blue-800 transition-colors"
+          "space-y-2 cursor-default w-full flex flex-col items-center",
+          url && "cursor-pointer group-hover:text-red-500 transition-colors"
         )}
       >
         <Image
-          src={builder.image(logo).width(180).height(180).url()}
+          src={builder.image(logo).url()}
           alt={name}
           width={180}
           height={180}
-          className="max-w-[180px] md:max-w-[180px] h-auto"
+          className="object-contain "
         />
         <p className="text-center text-lg">{name}</p>
       </a>

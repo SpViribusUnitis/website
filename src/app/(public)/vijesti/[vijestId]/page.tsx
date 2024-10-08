@@ -11,6 +11,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { formatDate } from "@/lib/utils";
 import { CustomPortableTextComponents } from "@/components/sanity/CustomPortableTextComponents/CustomPortableTextComponents";
 import { PortableText } from "@portabletext/react";
+import { DonacijaBanner } from "@/components/shared/donacija-banner";
 const builder = imageUrlBuilder(client);
 // Simulacija dohvaćanja podataka iz baze
 async function getBlogPost(slug: string) {
@@ -100,6 +101,7 @@ export default async function BlogPost({
         </main>
         <NewsSidebar />
       </div>
+      <DonacijaBanner />
     </div>
   );
 }

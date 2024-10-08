@@ -40,10 +40,10 @@ export const HeroSection = () => {
           <div className="grid grid-cols-2 gap-2 lg:gap-2 ">
             <div className="relative col-span-2 aspect-[4/3] overflow-hidden rounded-lg bg-red-200 h-[400px] w-full">
               <Image
-                src="/images/hero-section/6.jpg"
+                src="/images/hero-section/1.jpg"
                 alt="Company Image 1"
-                width={300}
-                height={200}
+                width={800}
+                height={600}
                 className="object-cover transition-transform duration-300 ease-in-out hover:scale-110 w-full "
                 onMouseEnter={() => setHoveredImage(1)}
                 onMouseLeave={() => setHoveredImage(null)}
@@ -51,7 +51,7 @@ export const HeroSection = () => {
             </div>
             <div className="relative aspect-square overflow-hidden rounded-lg">
               <Image
-                src="/images/hero-section/4.jpg"
+                src="/images/hero-section/2.jpg"
                 alt="Company Image 2"
                 width={300}
                 height={300}
@@ -62,7 +62,7 @@ export const HeroSection = () => {
             </div>
             <div className="relative aspect-square overflow-hidden rounded-lg">
               <Image
-                src="/images/hero-section/4.jpg"
+                src="/images/hero-section/3.jpg"
                 alt="Company Image 3"
                 width={300}
                 height={300}

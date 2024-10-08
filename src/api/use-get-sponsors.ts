@@ -7,10 +7,11 @@ export interface ISponzor {
   logo: string;
   url?: string;
   _id: string;
+  type: "sponzor" | "donator" | "suorganizator";
 }
 
 export const useGetSponzors = async () => {
-  const groqQuery = `*[_type == 'sponzor' ]{name,logo,url,_id}`;
+  const groqQuery = `*[_type == 'sponzor' ]{name,logo,url,_id,type}`;
 
   const data = await client.fetch(groqQuery, [], {
     next: {

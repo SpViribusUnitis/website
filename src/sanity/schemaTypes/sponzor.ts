@@ -21,6 +21,20 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'type',
+      title: 'Vrsta Pokrovitelja',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Sponzor', value: 'sponzor'},
+          {title: 'Donator', value: 'donator'},
+          {title: 'Suorganizator', value: 'suorganizator'},
+        ],
+        layout: 'dropdown',
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'url',
       title: 'Link Na web adresu sponzora (opcionalno)',
       type: 'url',
