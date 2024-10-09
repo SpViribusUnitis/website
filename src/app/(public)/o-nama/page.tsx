@@ -95,17 +95,17 @@ const ONamaPage = () => {
           />
           <div>
             <p className="mb-4">
-              Naša zadruga redovito organizira sajmove i događanja, poput
-              nedavno održanog Prvog Sajma Domaćih Proizvoda, koji je privukao
-              veliku pažnju javnosti. Ovi događaji nisu samo prilika za
-              promociju naših proizvoda, već i za jačanje zajedništva i pružanje
-              podrške onima kojima je najpotrebnija.
+              Naša zadruga planira redovito organizirati sajmove i događanja,
+              koji će biti prilika za promociju naših proizvoda. Ovi događaji,
+              osim što će omogućiti predstavljanje našeg rada, imat će i širi
+              cilj – jačanje zajedništva te pružanje podrške onima kojima je to
+              najpotrebnije.
             </p>
             <p>
-              Humanitarna komponenta duboko je utkana u naš rad. Dio prihoda od
-              prodaje naših proizvoda redovito usmjeravamo u fond za pomoć
-              braniteljima i njihovim obiteljima u teškoj socijalnoj situaciji,
-              čime nastojimo vratiti zajednici koja nas podržava.
+              Humanitarna komponenta duboko je utkana u našu misiju. Naš cilj je
+              da dio prihoda od prodaje proizvoda redovito usmjeravamo u fond za
+              pomoć braniteljima i njihovim obiteljima u teškoj socijalnoj
+              situaciji, čime bismo vratili zajednici koja nas podržava.
             </p>
             <p className="font-bold text-start text-xl mt-8">ORA ET LABORA</p>
           </div>

@@ -110,8 +110,8 @@ export const MobileNavSidebar = () => {
                 title="O nama"
                 subItems={[
                   { path: "/o-nama", title: "o nama" },
-                  { path: "/ciljevi", title: "ciljevi" },
-                  { path: "/sponzori", title: "sponzori" },
+                  { path: "/o-nama#ciljevi", title: "ciljevi" },
+                  { path: "/o-nama#pravilnik", title: "pravila zadruge" },
                 ]}
               />
               <NavItem

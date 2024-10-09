@@ -13,23 +13,14 @@ import { CustomPortableTextComponents } from "@/components/sanity/CustomPortable
 import { PortableText } from "@portabletext/react";
 import { DonacijaBanner } from "@/components/shared/donacija-banner";
 const builder = imageUrlBuilder(client);
-// Simulacija dohvaćanja podataka iz baze
-async function getBlogPost(slug: string) {
-  // U stvarnoj aplikaciji, ovdje biste dohvaćali podatke iz baze
-  return {
-    title: "Naslov blog posta",
-    date: "2023-10-03",
-    content: "Ovo je sadržaj blog posta...",
-    image: "/placeholder.svg",
-  };
-}
-
 export async function generateMetadata({
   params,
 }: {
   params: { vijestId: string };
 }): Promise<Metadata> {
-  const post = await client.fetch(buildVijestQuery(params.vijestId));
+  const post = await client.fetch(buildVijestQuery(params.vijestId), [], {
+    next: { revalidate: 120 },
+  });
 
   if (!post) {
     return {};
@@ -69,7 +60,9 @@ export default async function BlogPost({
 }) {
   /*  const post = await getBlogPost(params.slug); */
 
-  const vijestData = await client.fetch(buildVijestQuery(params.vijestId));
+  const vijestData = await client.fetch(buildVijestQuery(params.vijestId), [], {
+    next: { revalidate: 120 },
+  });
 
   if (!vijestData) {
     notFound();

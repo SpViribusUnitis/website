@@ -22,20 +22,20 @@ const vijestiSubItems: { title: string; href: string; description: string }[] =
       title: "Novosti",
       href: "/vijesti?category=novosti",
       description:
-        "A modal dialog that interrupts the user with important content and expects a response.",
+        "Najnovije informacije o aktivnostima, suradnjama i projektima zadruge Viribus Unitis",
     },
     {
       title: "Dogadjanja",
       href: "/vijesti?category=događanja",
       description:
-        "For sighted users to preview content available behind a link.",
+        "Detalji o nadolazećim događanjima, radionicama i sajmovima koje organizira zadruga",
     },
 
     {
       title: "Sve Vijesti",
       href: "/vijesti",
       description:
-        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+        " Pogledajte sve objave i novosti na jednom mjestu, od aktualnih događaja do važnih najava",
     },
   ];
 
