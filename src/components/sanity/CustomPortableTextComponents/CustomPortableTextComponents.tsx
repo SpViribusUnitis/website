@@ -58,7 +58,7 @@ export const CustomPortableTextComponents = {
     youtube: ({ value }: any) => {
       const videoDesc = value.videoDesc;
       return (
-        <div className="">
+        <div className="py-4">
           <YoutubeVideo videoData={{ url: value.url, videoDesc }} />
         </div>
       );

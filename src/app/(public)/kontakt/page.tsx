@@ -57,7 +57,51 @@ const KontaktPage = () => {
                     </span>
                   </div>
                 </div>
-
+                <div className="flex-col  items-end space-y-2 mt-8">
+                  <h2 className="font-bold ">Opće Informacije</h2>
+                  <ul className="space-y-1">
+                    <li>
+                      <span className="uppercase font-semibold mr-2">
+                        Ime:{" "}
+                      </span>{" "}
+                      Braniteljska zadruga VIRIBUS UNITIS,{" "}
+                    </li>
+                    <li>
+                      <span className="uppercase font-semibold mr-2">
+                        Adresa:
+                      </span>{" "}
+                      Poljana Zdenka Mikine 45, Zagreb,
+                    </li>
+                    <li>
+                      <span className="uppercase font-semibold mr-2">OIB:</span>{" "}
+                      08416373619,
+                    </li>
+                    <li>
+                      <span className="uppercase font-semibold mr-2">
+                        Upravitelj:
+                      </span>{" "}
+                      Vitomir Ćavar
+                    </li>
+                    <li>
+                      <span className="uppercase font-semibold mr-2">
+                        Banka:
+                      </span>{" "}
+                      Hrvatska poštanska banka d.d.
+                    </li>
+                    <li>
+                      <span className="uppercase font-semibold mr-2">
+                        Broj Računa:
+                      </span>{" "}
+                      HR8523900011101242348
+                    </li>
+                    <li>
+                      <span className="uppercase font-semibold mr-2">
+                        IBAN:
+                      </span>{" "}
+                      HR85 2390 0011 1012 4234 8
+                    </li>
+                  </ul>
+                </div>
                 <div className="mt-8">
                   <h3 className="text-lg font-semibold mb-4 text-gray-900">
                     Pratite Nas
