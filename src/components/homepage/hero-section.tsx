@@ -38,7 +38,7 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2 lg:gap-2 ">
-            <div className="relative col-span-2 aspect-[4/3] overflow-hidden rounded-lg bg-red-200 h-[400px] w-full">
+            <div className="relative col-span-2 aspect-[4/3] overflow-hidden rounded-lg h-[400px] w-full">
               <Image
                 src="/images/hero-section/1.jpg"
                 alt="Company Image 1"

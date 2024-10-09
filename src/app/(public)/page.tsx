@@ -35,9 +35,7 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
-const HomePage = async () => {
-  const data = await useGetPosts("dogadjanja");
-
+const HomePage = () => {
   return (
     <main>
       <HeroSection />
