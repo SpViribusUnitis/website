@@ -1,4 +1,5 @@
 import { useGetPosts } from "@/api/use-get-posts";
+import AboutUsVideoSection from "@/components/homepage/about-us-video-section";
 import { HeroSection } from "@/components/homepage/hero-section";
 import { DonacijaBanner } from "@/components/shared/donacija-banner";
 import { LatestNewsSection } from "@/components/shared/latest-news-section";
@@ -39,6 +40,7 @@ const HomePage = () => {
   return (
     <main>
       <HeroSection />
+      <AboutUsVideoSection />
       <LatestNewsSection />
       <SponsorSection />
       <div className="bg-gray-100 ">
