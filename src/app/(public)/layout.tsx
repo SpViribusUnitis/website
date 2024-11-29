@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer/footer";
 import { Navigation } from "@/components/navigation/navigation";
+import { Toaster } from "@/components/ui/toaster";
 import React from "react";
 
 const WebsiteLayout = ({
@@ -13,6 +14,7 @@ const WebsiteLayout = ({
       <Navigation />
       {children}
       <Footer />
+      <Toaster />
     </div>
   );
 };

@@ -6,12 +6,13 @@ import NewsSidebar from "@/components/vijesti/news-sidebar";
 import { client } from "@/sanity/lib/client";
 import { buildVijestQuery, vijestiPathsQuery } from "@/sanity/queries/vijesti";
 
-import { formatISO, parseISO, format } from "date-fns";
 import imageUrlBuilder from "@sanity/image-url";
-import { formatDate } from "@/lib/utils";
 import { CustomPortableTextComponents } from "@/components/sanity/CustomPortableTextComponents/CustomPortableTextComponents";
 import { PortableText } from "@portabletext/react";
 import { DonacijaBanner } from "@/components/shared/donacija-banner";
+import { ArticleTitleDate } from "@/components/vijesti/article-title-date";
+
+
 const builder = imageUrlBuilder(client);
 export async function generateMetadata({
   params,
@@ -82,7 +83,8 @@ export default async function BlogPost({
             />
             <div className="p-6">
               <h1 className="text-3xl font-bold mb-2">{title}</h1>
-              <p className="text-gray-600 mb-4">{formatDate(publishedAt)}</p>
+              <ArticleTitleDate publishedAt={publishedAt} />
+            
               <div>
                 <PortableText
                   value={body}
