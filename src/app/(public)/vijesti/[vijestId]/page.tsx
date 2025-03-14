@@ -12,7 +12,6 @@ import { PortableText } from "@portabletext/react";
 import { DonacijaBanner } from "@/components/shared/donacija-banner";
 import { ArticleTitleDate } from "@/components/vijesti/article-title-date";
 
-
 const builder = imageUrlBuilder(client);
 export async function generateMetadata({
   params,
@@ -74,17 +73,19 @@ export default async function BlogPost({
       <div className="flex flex-col md:flex-row gap-8">
         <main className="md:w-2/3">
           <article className="bg-white rounded-lg shadow-md overflow-hidden">
-            <Image
-              src={builder.image(mainImage).width(800).height(400).url()}
-              alt={title}
-              width={800}
-              height={400}
-              className="w-full h-64 object-cover"
-            />
+            <div className="w-full">
+              <Image
+                src={builder.image(mainImage).width(1200).height(400).url()}
+                alt={title}
+                width={1200}
+                height={400}
+                className="object-fill w-full"
+              />
+            </div>
             <div className="p-6">
               <h1 className="text-3xl font-bold mb-2">{title}</h1>
               <ArticleTitleDate publishedAt={publishedAt} />
-            
+
               <div>
                 <PortableText
                   value={body}
