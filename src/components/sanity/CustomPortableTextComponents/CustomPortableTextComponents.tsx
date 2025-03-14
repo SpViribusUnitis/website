@@ -44,12 +44,13 @@ export const CustomPortableTextComponents = {
     image: ({ value }: any) => {
       const imgDesc = value.imgDesc;
       return (
-        <div className="">
+        <div className="py-4 w-full">
           <Image
             alt={imgDesc ? imgDesc : "Decorative image related to article"}
             src={builder.image(value).width(800).height(400).url()}
             width={800}
             height={400}
+            className="mx-auto"
           />
           {imgDesc && <p>{imgDesc}</p>}
         </div>
